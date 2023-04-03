@@ -2,153 +2,169 @@
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-<main>
-    {{#with person}}
 
-    <div>
-        <h1>{{name}}</h1>
-    </div>
-    <div>
-        <b>Age:</b> <i>{{age}}</i>
-        <b>Gender:</b> <i>{{gender}}</i>
-    </div>
+{{#with person}}
 
-    <br>
+<div>
+    <h1>{{name}}</h1>
+</div>
+<div>
+    <b>Age:</b> <i>{{age}}</i>
+    <br />
+    <b>Gender:</b> <i>{{gender}}</i>
+    <br />
+    <hr />
+    <br />
+</div>
 
-    {{#with address}}
-    <section>
-        <address>
-            <b>Street:</b> <i>{{street}}</i>
-            <b>City</b> <i>{{city}}</i>
-            <b>State</b> <i>{{state}}</i>
-            <b>Zip</b> <i>{{zip}}</i>
-            <b>Country</b> <i>{{country}}</i>
-        </address>
-    </section>
-    {{/with}}
-    <br>
-    <hr>
-    <br>
+<br />
 
-    {{#each education}}
-    <section>
-        <details open>
-            <summary><ins><strong>Education info:</strong></ins></summary>
+{{#with address}}
+<section>
+    <address>
+        <b>Street:</b> <i>{{street}}</i>
+        <b>City:</b> <i>{{city}}</i>
+        <b>State:</b> <i>{{state}}</i>
+        <b>Zip:</b> <i>{{zip}}</i>
+        <b>Country:</b> <i>{{country}}</i>
+    </address>
+</section>
+{{/with}}
+<br />
+<hr />
+<br />
+<h2>Education</h2>
+<ul>
+    <li>
+        {{#each education}}
 
-            <b>{{university}}:</b>
-            <br>
-            <ins><b>Degree:</b> <ins>{{degree}}</ins>
-                <br>
-                <ins><b>Major:</b> <ins>{{major}}</ins>
-                    <br>
-                    <ins><b>Graduation year:</b> <ins>{{graduationYear}}</ins>
-        </details>
-    </section>
-    {{/each}}
-    <br>
-
-
-    {{#each workExperience}}
-    <section>
-        <details open>
-            <summary><ins><strong>Work expirience:</strong></ins></summary>
-            <ins> <b>{{company}} :</b></ins>
-            <br>
-            <b>Title:</b> <ins>{{title}}</ins>
-            <br>
-            <b>Duration:</b> <ins>{{startDate}} - {{#if endDate}}{{endDate}}{{else}}(ще працюю){{/if}}</ins>
-            <br>
-            <b>Responsibilities:</b>
-            {{#each responsibilities}}
-            <li><ins>{{this}}</ins></li>
-            {{/each}}
-            <b>Field of industry: </b><ins>{{industry}}</ins>
-            <b>Year of foundation: </b><ins>{{year_founded}}</ins>
-        </details>
-
-        <br>
-
-        {{#each employees}}
-        <section>
-            <details open>
-                <summary><ins><strong>Employees:</strong></ins></summary>
-
-                <b>Name:</b> <ins>{{name}}</ins>
-                <br>
-                <b>Position:</b> <ins>{{position}}</ins>
-                <b>Department:</b> <ins>{{department}}</ins>
-                {{#each projects}}
-                <details open>
-                    <summary><ins><strong>Projects :</strong></ins></summary>
-                    <b>Name:</b> <ins>{{name}}</ins>
-                    <b>Description:</b> <ins>{{description}}</ins>
-                    <b>Status:</b> <ins>{{status}}</ins>
-
-                    <details open>
-                        <summary><ins><strong>Teams :</strong></ins></summary>
-                        {{#each teams}}
-                        <b>Team name: </b> <ins>{{team_name}}</ins>
-                        {{#with team_leader}}
-                        <b>Team Leader: </b> <ins>{{name}}</ins>
-                        <b>Position: </b> <ins>{{title}}</ins>
-                        <b>Email: </b> <ins>{{email}}</ins>
-                        {{/with}}
-                        <br>
-                        {{#each team_members}}
-
-                        <details open>
-                            <summary><ins><strong>Team members :</strong></ins></summary>
-                            <b>Name: </b> <ins>{{name}}</ins>
-                            <b>Title: </b> <ins>{{title}}</ins>
-                            <b>Email: </b> <ins>{{email}}</ins>
-                            <ins><b>Skills: </b></ins>
-                            {{#each skills}}
-                            <li>{{this}}</li>
-                            {{/each}}
-                            <br>
-                            <div>
-                                <details open>
-                                    <summary><ins><strong>Projects :</strong></ins></summary>
-                                    {{#each projects}}
-                                    <b>Name: </b> <ins>{{name}}</ins>
-                                    <br>
-                                    <b>Description: </b> <ins>{{description}}</ins>
-                                    <br>
-                                    <b>Technologies: </b> <ins>{{technologies}}</ins>
-                                    <ins><strong>Projects :</strong></ins>
-                                    {{#each team_members}}
-                                    <li>{{name}}</li>
-                                    <li>{{title}}</li>
-                                    {{/each}}
-
-
-
-
-                                    {{/each}}
-                            </div>
-
-
-
-
-                        </details>
-
-
-
-                        {{/each}}
-                        {{/each}}
-                    </details>
-                    {{/each}}
-                </details>
-        </section>
+        <div>Degree:{{degree}}</div>
+        <br />
+        <div>Major:{{major}}</div>
+        <br />
+        <div>Univercity: {{university}}</div>
+        <br />
+        <div>Graduation year:{{graduationYear}}</div>
         {{/each}}
+    </li>
+</ul>
+<br />
+<hr />
+<br />
+<h2>WorkExperience</h2>
+<ul>
+    <li>
+        {{#each workExperience}}
+        <h3>Company: {{company}}</h3>
+        <br />
+        <div>Title: {{title}}</div>
+        <br />
+        <div>From:<date>{{startDate}}</date> to:<date>{{endDate}}</date>
+        </div>
+        <br />
+        <ul>
+            {{#each responsibilities}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <br />
+        <div>Field of industry: {{industry}}</div>
+        <div>Year of foundation: {{year_founded}}</div>
+        <br />
+        <h4>Employees</h4>
+        <ul></ul>
+        {{#each employees}}
+    <li></li>
+    {{name}}
+    {{position}}
+    {{department}}
+    <br />
+    Projects:
+    <ul></ul>
+    {{#each projects}}
+    <li></li>
+    {{name}}
+    {{description}}
+    {{status}}
+    <br />
+    Teams:
+    {{#each teams}}
+    <li></li>
+    {{team_name}}
+    <br />
+    team_leader:
+    {{#with team_leader}}
+    {{name}}
+    {{title}}
+    {{email}}
+    {{/with}}
+    <br />
+    Team_members:
+    <ul></ul>
+    {{#each team_members}}
+    <li></li>
+    {{name}}
+    {{title}}
+    <br />
+    Email: {{email}}
+    <br />
+    Skills:
+    <ul></ul>
+    {{#each skills}}
+    <li>{{this}}</li>
+    {{/each}}
+    <br />
+    Projects :
+    <ul></ul>
+    {{#each projects}}
+    <li></li>
+    {{name}}
+    {{description}}
+    <br />
+    Technologies:
+    <ul>
+        {{#each technologies}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    Team members:
+    <ul>
+        {{#each team_members}}
+        <li>
+            {{name}}
+            {{title}}
+            {{/each}}
+        </li>
+    </ul>
+
+
+
+
+    {{/each}}
+    </div>
+
+
+
+
+    </details>
+
+
+
+    {{/each}}
+    {{/each}}
+    </details>
+    {{/each}}
+    </details>
+    </section>
+    {{/each}}
 
     </section>
     {{/each}}
     {{/with}}
-</main>
 
 
 
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML--}}
+
+    {{!--
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML--}}
