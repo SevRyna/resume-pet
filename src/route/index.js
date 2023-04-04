@@ -451,9 +451,9 @@ router.get('/bio', function (req, res) {
 })
 
 
-
 // ================================================================
 
+//                        ↙ тут вводимо шлях(PATH) до сторінки
 router.get('/program', function (req, res) {
 	//             ↙ cюди вводимо назву файлу з сontainer
 	res.render('program', {
@@ -541,12 +541,13 @@ router.get('/program', function (req, res) {
 
 // ================================================================
 
+//                   ↙  тут вводимо шлях(PATH) до сторінки
 router.get('/web', function (req, res) {
 	//             ↙ cюди вводимо назву файлу з сontainer
 	res.render('web', {
+		layout: 'basic',
+
 		web: {
-			layout: 'basic',
-			
 			languages: [
 				{
 					name: 'HTML',

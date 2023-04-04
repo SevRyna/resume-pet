@@ -2,15 +2,66 @@
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
+<main>
+    <div>
+        {{> title data='WebLanguages'big=true }}
+
+        {{#with web}}
+        <ul>
+            {{#each languages}}
+            <li>
+                <h2>{{name}} \ ({{version}})</h2>
+                <em>{{description}}</em>
+
+                {{#each elements}}
+                <ul>
+                    <li>
+                        <p>{{name}} ({{description}})</p>
+                        {{#each attributes}}
+                        <details open>
+                            <summary>{{name}} ({{description}})</summary>
+                        </details>
+                        {{/each}}
+                    </li>
+                </ul>
+                {{/each}}
+                <br>
+                <hr>
+                {{#each properties}}
+                <ul>
+                    <li>
+                        <p>{{name}} ({{description}})</p>
+                        {{#each values}}
+                        <details open>
+                            <summary>{{value}} ({{description}})</summary>
+                        </details>
+                    </li>
+                </ul>
+                {{/each}}
+                <br>
+                <hr>
+                {{#each functions}}
+                <ul>
+                    <li>
+                        <p>{{name}} ({{description}})</p>
+                        {{#each parameters}}
+                        <details>
+                            <summary>{{name}} \ {{type}} ({{description}})</summary>
+                        </details>
+                        {{/each}}
+                    </li>
+                </ul>
+                {{/each}}
+                {{/each}}
+            </li>
+            {{/each}}
+        </ul>
+        {{/with}}
+    </div>
+
+</main>
 
 
-
-
-
-
-
-
-
-
-< {{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs має
-    вже структуру HTML--}}
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs
+має
+вже структуру HTML--}}
