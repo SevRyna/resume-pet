@@ -18,7 +18,7 @@
                     <li>
                         <p>{{name}} ({{description}})</p>
                         {{#each attributes}}
-                        <details open>
+                        <details>
                             <summary>{{name}} ({{description}})</summary>
                         </details>
                         {{/each}}
@@ -26,33 +26,34 @@
                 </ul>
                 {{/each}}
                 <br>
-                <hr>
                 {{#each properties}}
                 <ul>
                     <li>
                         <p>{{name}} ({{description}})</p>
                         {{#each values}}
-                        <details open>
-                            <summary>{{value}} ({{description}})</summary>
+                        <details>
+                            <summary> {{value}} ({{description}})</summary>
                         </details>
+                        {{/each}}
                     </li>
                 </ul>
                 {{/each}}
-                <br>
-                <hr>
+
                 {{#each functions}}
                 <ul>
                     <li>
                         <p>{{name}} ({{description}})</p>
                         {{#each parameters}}
                         <details>
-                            <summary>{{name}} \ {{type}} ({{description}})</summary>
+                            <summary>{{name}} {{type}} ({{description}})</summary>
                         </details>
                         {{/each}}
                     </li>
                 </ul>
                 {{/each}}
-                {{/each}}
+
+
+
             </li>
             {{/each}}
         </ul>
