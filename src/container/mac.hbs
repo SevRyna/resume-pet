@@ -1,0 +1,161 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+git
+
+<h1><span class="badge bg-secondary">{{name}}</span></h1>
+<h5>{{description}}</h5>
+<h5>price: {{price}}</h5>
+<h4><span class="badge bg-secondary">{{category}}</span></h4>
+<hr>
+<h3><span class="badge bg-secondary">Features:</span></h3>
+{{#with features}}
+{{#with processor}}
+<h4><span class="badge bg-secondary">Processor:</span></h4>
+<details open>
+    <b>Brand:</b> <i>{{brand}}</i>
+    <br>
+    <b>Model:</b> <i>{{model}}</i>
+    <br>
+    <b>Speed:</b> <i>{{speed}}</i>
+    <br>
+    <b>Cores:</b> <i>{{cores}}</i>
+    <br>
+    <b>Cache:</b> <i>{{cache}}</i>
+</details>
+{{/with}}
+<hr>
+{{#with memory}}
+<h4><span class="badge bg-secondary">Memory:</span></h4>
+<details open>
+    <b>Type:</b> <i>{{type}}</i>
+    <br>
+    <b>Size:</b> <i>{{size}}</i>
+    <br>
+    <b>Speed:</b> <i>{{speed}}</i>
+</details>
+{{/with}}
+<hr>
+{{#with storage}}
+<h4><span class="badge bg-secondary">Storage:</span></h4>
+<details open>
+    <b>Type:</b> <i>{{type}}</i>
+    <br>
+    <b>Size:</b> <i>{{size}}</i>
+</details>
+{{/with}}
+<hr>
+{{#with display}}
+<h4><span class="badge bg-secondary">Display:</span></h4>
+<details open>
+    <b>Size:</b> <i>{{size}}</i>
+    <br>
+    <b>Resolution:</b> <i>{{resolution}}</i>
+    <br>
+    <b>Technology:</b> <i>{{technology}}</i>
+    <br>
+    <b>color_space:</b> <i>{{color_space}}</i>
+    <br>
+    <b>brightness:</b> <i>{{brightness}}</i>
+    <br>
+    <b>refresh_rate:</b> <i>{{refresh_rate}}</i>
+</details>
+{{/with}}
+<hr>
+{{#with graphics}}
+<h4><span class="badge bg-secondary">Graphics:</span></h4>
+<details open>
+    <b>Brand:</b> <i>{{brand}}</i>
+    <br>
+    <b>Model:</b> <i>{{model}}</i>
+    <br>
+    <b>Memory:</b> <i>{{memory}}</i>
+</details>
+{{/with}}
+<hr>
+{{!--#with ports--}}
+<h4><span class="badge bg-secondary">Ports:</span></h4>
+{{#each ports}}
+<details open>
+    <b>Type:</b> <i>{{type}}</i>
+    <br>
+    <b>Count:</b> <i>{{count}}</i>
+    <br>
+    {{#if features}}
+    <b>Features :{{features}}</b>
+    {{/if}}
+</details>
+<br>
+{{/each}}
+{{!--/with--}}
+<hr>
+{{#with battery}}
+<h4><span class="badge bg-secondary">Battery:</span></h4>
+<details open>
+    <b>Type:</b> <i>{{type}}</i>
+    <br>
+    <b>Capacity:</b> <i>{{capacity}}</i>
+    <br>
+    <b>Life:</b> <i>{{life}}</i>
+</details>
+{{/with}}
+<hr>
+<h4><span class="badge bg-secondary">Weight:</span>{{weight}}</h4>
+{{#with dimensions}}
+<h4>Dimensions</h4>
+<details open>
+    <b>Height:</b> <i>{{height}}</i>
+    <br>
+    <b>Width:</b> <i>{{width}}</i>
+    <br>
+    <b>Depth:</b> <i>{{depth}}</i>
+</details>
+{{/with}}
+<hr>
+<h4><span class="badge bg-secondary">Operating_system:</span>{{operating_system}}</h4>
+<h4><span class="badge bg-secondary">Accessories:</span></h4>
+<ul>
+    <li>
+        {{#each accessories}}
+        <div>Name:{{name}}</div>
+
+        <div>Price:{{price}}</div>
+        <br>
+        {{/each}}
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{/with}}{{!--Features--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш
+layout/default.hbs
+має
+вже структуру HTML--}}
