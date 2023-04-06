@@ -1,0 +1,116 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main>
+    <div>
+        <span class="badge text-bg-primary">JavaScript</span>
+    </div>
+    <h6>{{description}}</h6>
+    <br />
+    <hr />
+    <br />
+    <div>
+        <span class="badge rounded-pill text-bg-secondary">History</span>
+        {{#with history}}
+        <section>
+            <history>
+                <b>Year:</b> <i>{{year}}</i>
+                <b>Founder:</b> <i>{{founder}}</i>
+            </history>
+        </section>
+        {{/with}}
+        <br />
+        <hr />
+        <div>
+            <span class="badge rounded-pill text-bg-success">Types</span>
+            <section>
+                {{> title data= Types }}
+                <ul>
+                    {{#each types }}
+                    <li> {{this}}</li>
+                    {{/each}}
+                </ul>
+            </section>
+        </div>
+        <br />
+        <hr />
+        <div>
+            <span class="badge rounded-pill text-bg-danger">Syntax</span>
+        </div>
+        {{#with syntax}}
+        <section>
+            <syntax>
+                <b>variables:</b> <i>{{variables}}</i>
+                <br>
+                <b>functions:</b> <i>{{functions}}</i>
+                <br>
+                <b>conditionals:</b> <i>{{conditionals}}</i>
+                <br>
+                <b>loops:</b> <i>{{loops}}</i>
+                <br>
+                <b>classes:</b> <i>{{classes}}</i>
+            </syntax>
+        </section>
+        {{/with}}
+        <br />
+        <hr />
+        <div>
+            <span class="badge rounded-pill text-bg-warning">Features</span>
+            <section>
+                {{> title data=features }}
+                <ul>
+                    {{#each features}}
+                    <li> {{this}}</li>
+                    {{/each}}
+                </ul>
+            </section>
+        </div>
+        <br />
+        <hr />
+        <div>
+            <span class="badge rounded-pill text-bg-info">libraries</span>
+            <section>
+                {{> title data=libraries }}
+                <ul>
+                    {{#each libraries}}
+                    <li> {{this}}</li>
+                    {{/each}}
+                </ul>
+            </section>
+        </div>
+        <br />
+        <hr />
+        <div>
+            <span class="badge rounded-pill text-bg-info">Tools</span>
+            <section>
+                {{> title data= tools}}
+                <ul>
+                    {{#each tools}}
+                    <li> {{this}}</li>
+                    {{/each}}
+                </ul>
+            </section>
+        </div>
+        <br />
+        <hr />
+        <div>
+            <button type="button" class="btn btn-link">Cпшommunity</button>
+            {{#with community}}
+            <section>
+                <community>
+                    <b>Name:</b> <i>{{name}}</i>
+                    <br>
+                    <b>Type:</b> <i>{{type}}</i>
+                </community>
+            </section>
+            {{/with}}
+
+
+
+</main>
+
+
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs
+має
+вже структуру HTML--}}
