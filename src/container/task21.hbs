@@ -3,97 +3,117 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div class="card">
-    <div class"card-body">
-        <h1>JavaScript</h1>
-        <p>JavaScript is a popular high-level, dynamic, and interpreted programming language.</p>
-        <button type="button" class="btn btn-primary">Open page</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-primary">Add to cart</button>
+<main>
+
+    {{#each heading}}
+    {{#with main}}
+    <br>
+    <h1>{{title}}</h1>
+    <p>{{text}}</p>
+    <br>
+    <div class="btn btn-primary">Solid</div>
+    <br>
+    <br>
+    <div class="btn btn-outline-primary">Outline</div>
+    <br>
+    <br>
+    {{/with}}
+    {{#with second}}
+    <h2>{{title}}</h2>
+    <p>{{text}}</p>
+    <br>
+    <div class="btn btn-secondary">Solid</div>
+    <br>
+    <br>
+    <div class="btn btn-outline-secondary">Outline</div>
+    <br>
+    {{/with}}
+    {{/each}}
+
+
+
+
+    <br>
+    <br>
+
+    <div class="card">
+        <div class"card-body">
+            <span class="badge text-bg-info">Open link</span>
+            <button type="button" class="btn btn-link">url</button>
+            <br>
+            <span class="badge text-bg-info">Github</span>
+            <button type="button" class="btn btn-link">url</button>
+            <br>
+            <span class="badge text-bg-info">Bootstrap</span>
+            <button type="button" class="btn btn-link">url</button>
+        </div>
     </div>
-</div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<div class="card">
-    <div class"card-body">
-        <h2>Stack Overflow</h2>
-        <p>First-class functions.</p>
-        <button type="button" class="btn btn-secondary">Open page</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-secondary">Add to card</button>
+    <div class="card">
+        <div class"card-body">
+            <h3>JavaScript Weekly</h3>
+            <p>Prototype-based inheritance newsletter.</p>
+            <button type="button" class="btn btn-success">Open page</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-outline-success">Add to card</button>
+        </div>
     </div>
-</div>
-
-<br>
-<br>
-
-<div class="card">
-    <div class"card-body">
-        <h3>JavaScript Weekly</h3>
-        <p>Prototype-based inheritance newsletter.</p>
-        <button type="button" class="btn btn-success">Open page</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-success">Add to card</button>
-    </div>
-</div>
-
-<br>
-<br>
-<div class="card">
-    <div class"card-body">
-        <div class="display-1">Nested_display</div>
-        <br>
-        <p>HTML</p>
-        <br>
-        <div class="display-4">Children_display</div>
-        <br>
-        <p>Outdated HTML tags</p>
-        <br>
-        <p>Tags that have been identified as deprecated and not recommended for use in HTML version 5.</p>
-        <br>
-        <button type="button" class="btn btn-outline-warning">Open</button>
-        <br>
-        <hr>
-        <br>
-        <div class="card">
-            <div class"card-body">
-                <div class="display-6">Sections</div>
-                <br>
-                <button type="button" class="btn btn-info">Learn more</button>
-                <br>
-                <br>
-                <div class="card">
-                    <div class"card-body">
-                        <h3>About modules</h3>
-                        <br>
-                        <p>Modules with import/export statements</p>
-                        <br>
+    <br>
+    <br>
+    <div class="card">
+        <div class"card-body">
+            <div class="display-1">Nested_display</div>
+            <br>
+            <p>HTML</p>
+            <br>
+            <div class="display-4">Children_display</div>
+            <br>
+            <p>Outdated HTML tags</p>
+            <br>
+            <p>Tags that have been identified as deprecated and not recommended for use in HTML version 5.</p>
+            <br>
+            <button type="button" class="btn btn-outline-warning">Open</button>
+            <br>
+            <hr>
+            <br>
+            <div class="card">
+                <div class"card-body">
+                    <div class="display-6">Sections</div>
+                    <br>
+                    <button type="button" class="btn btn-info">Learn more</button>
+                    <br>
+                    <br>
+                    <div class="card">
+                        <div class"card-body">
+                            <h3>About modules</h3>
+                            <br>
+                            <p>Modules with import/export statements</p>
+                            <br>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <hr>
-                <br>
-                <div class="card">
-                    <div class"card-body">
-                        <span class="badge text-bg-info">Open link</span>
-                        <button type="button" class="btn btn-link">url</button>
-                        <br>
-                        <span class="badge text-bg-info">Github</span>
-                        <button type="button" class="btn btn-link">url</button>
-                        <br>
-                        <span class="badge text-bg-info">Bootstrap</span>
-                        <button type="button" class="btn btn-link">url</button>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="card">
+                        <div class"card-body">
+                            <span class="badge text-bg-info">Open link</span>
+                            <button type="button" class="btn btn-link">url</button>
+                            <br>
+                            <span class="badge text-bg-info">Github</span>
+                            <button type="button" class="btn btn-link">url</button>
+                            <br>
+                            <span class="badge text-bg-info">Bootstrap</span>
+                            <button type="button" class="btn btn-link">url</button>
+                        </div>
                     </div>
-                </div>
 
 
 
-                {{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш
-                layout/default.hbs
-                має
-                вже структуру HTML--}}
+                    {{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш
+                    layout/default.hbs
+                    має
+                    вже структуру HTML--}}
