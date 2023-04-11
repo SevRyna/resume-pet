@@ -3,31 +3,153 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 <main>
-
-    {{#with navigator.links.[0]}}
-    <div class="Home">
-        <a href="https://github.com/" class="nav link">{{text}}</a>
-    </div>
-    {{/with}}
-    <button type="button" class="btn btn-link">Home</button>
-    <div class="Contact">
-        <a href="https://www.google.com/" class="nav link">{{text}}</a>
-    </div>
-    <button type="button" class="btn btn-link">Contact</button>
-    <div class="Help">
-        <a href="https://www.youtube.com/" class="nav link">{{text}}</a>
-    </div>
-    <button type="button" class="btn btn-link">Help</button>
-    <button type="button" class="btn btn-light">Lets start</button>
-    <br>
-    <hr>
-    {{/with}}
-    <div class="row">
-        <div>
-
+    <div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="p-3 mb-2 bg-success-subtle text-emphasis-success">
+                        <h5 class="pt-5">SHOP</h5>
+                        <section>
+                            <ul class="nav justify-content-end">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="https://github.com/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.google.com/">Contacts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.youtube.com/">Help</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Logo</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <br>
+    {{#with newsBlock}}
+    <h3>{{title}}</h3>
+    <div class="row g-4">
+        {{#each cards}}
+
+        <div class="col-3 g-4">
+            <div class="card text p-3 mb-2 bg-dark-subtle text-emphasis-dark">
+                <div class="card-body">
+                    <h5><span class="class=card-header">{{title}}</span>
+                        <span class="bg text text-bg-danger badge rounded-pill">{{isTop}}</span>
+                        <span class="bg text text-bg-success badge rounded-pill">{{isNew}}</span>
+                        <hr>
+                        <p class="card-text">{{description}}</p>
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    {{#with goodsBlock}}
+    <ul class="nav nav-tabs mb-5">
+        {{#each tabs}}
+        <li class="nav-link{{#if isActive}} 
+        active{{/if}}
+     {{#if isDisabled}}disabled{{/if}}">
+            {{text}}
+        </li>
+        {{/each}}
+    </ul>
+
+    {{/with}}
+    <br>
+    <div class="card"></div>
+    {{#with goodsBlock}}
+    <h2>{{title}}</h2>
+    <div class="row g-6">
+        {{#each cards}}
+        <div class="col-4 g-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://picsum.photos/400/200" class="card-img-top" alt="iPhone 13" />
+                    <h5>
+                        <span class="text-bg-secondary ">{{title}}</span>
+                        <span class="bg text text-bg-info badge rounded-pill">{{isNew}}</span>
+                        <span class="bg text text-bg-warning badge rounded-pill">{{isHot}}</span>
+                    </h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+
+    {{#with subscribe}}
+    <div class="card">
+        <div class="card-body text-bg-dark">
+            <div class=col-12>
+                <ul class="nav nav-pills">
+                    <li class="col-7 ms-5">
+                        <h2>{{header}}</h2>
+                        <p class="mb-0">{{description}}</p>
+                    </li>
+                    {{#each buttons}}
+                    <li class="m-2 ms-4 mt- 3 me-0">
+                        <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+    <hr>
+    {{#with service}}
+    <div class="card">
+        <div class="card-body text-bg-success">
+            <div class="col-12">
+                <h2 class="text-center">{{title}}</h2>
+                <p class="text-center">{{description}}</p>
+                {{#each buttons}}
+                <div class="d-grid gap-2 col-3 mx-auto">
+                    <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+    <br>
+
+    <hr class"my-5">
+    <footer>
+        <div class="row g-5">
+            {{#each footer}}
+            <div class="nav col-2">
+                <div>
+                    {{#each this}}
+                    <div>
+                        <a class="nav nav-link{{#if last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </footer>
+
+
+
+
+
 
 </main>
-{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs має
+
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs
+має
 вже структуру HTML--}}
