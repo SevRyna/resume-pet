@@ -4,33 +4,29 @@
 --}}
 <main>
     <div>
-        <div class="card">
-            <div class="row">
-                <div class="col-12">
-
-                    <div class="p-2 bg-success-subtle text-emphasis-success">
-                        <h5 class="pt-5">LOGO</h5>
-                        <section>
-                            <ul class="nav justify-content-end">
-                                <li class=" nav-item">
-                                    <a class="nav-link active" aria-current="page" href="https://github.com/">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.google.com/">Contacts</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.youtube.com/">Help</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Logo</a>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
+        <div class="row card">
+            <div class="bg-success-subtle text-emphasis-success col-6">LOGO</div>
+            <div class="bg-success-subtle text-emphasis-success col-6">
+                <section>
+                    <ul class="nav justify-content-end">
+                        <li class=" nav-item">
+                            <a class="nav-link active" aria-current="page" href="https://github.com/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.com/">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com/">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Logo</a>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
+
 
     <div>
         <nav aria-label="breadcrumb">
@@ -133,7 +129,8 @@
                             value="Add to card">
                     </li>
                     <li class="nav-link col-3"> <input class="btn btn-success" type="like" value="Like"> </li>
-                    <li class="nav-link col-3"> <input class="btn btn-outline-info" type="Share" value="Share"> </li>
+                    <li class="nav-link col-3"> <input class="btn btn-outline-info" type="Share" value="Share">
+                    </li>
                 </ol>
             </div>
         </div>
@@ -187,7 +184,8 @@
                 <div>
                     {{#each this}}
                     <div>
-                        <a class="nav nav-link{{#if last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+                        <a class="nav nav-link{{#if @last}} disabled 
+                        {{/if}}" href="{{this.link}}">{{this.text}}</a>
                     </div>
                     {{/each}}
                 </div>
