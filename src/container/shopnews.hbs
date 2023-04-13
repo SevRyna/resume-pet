@@ -3,34 +3,32 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 <main>
-    <div>
-        <div class="card">
-            <div class="row">
-                <div class="col-12">
-
-                    <div class="p-2 bg-success-subtle text-emphasis-success">
-                        <h5 class="pt-5">LOGO</h5>
-                        <section>
-                            <ul class="nav justify-content-end">
-                                <li class=" nav-item">
-                                    <a class="nav-link active" aria-current="page" href="https://github.com/">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.google.com/">Contacts</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://www.youtube.com/">Help</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Logo</a>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
+    {{#with navigation}}
+    <div class="card mb-5">
+        <div class="row">
+            <div class="col-4">
+                <div class="display-6 ms-2 mb-2">
+                    {{Logo}}
                 </div>
+            </div>
+
+            <div class="col-8">
+                <ul class="nav justify-content -end">
+                    {{#each links}}
+                    <li class="nav-item mt-2">
+                        <a href="{{href}}" {{#unless @last}} class="nav-link" {{else}} class="nav-link disabled"
+                            {{/unless}}>
+                            {{text}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
             </div>
         </div>
     </div>
+    {{/with}}
+
+
     <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
