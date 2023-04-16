@@ -2062,6 +2062,7 @@ router.get('/shopproduct', function (req, res) {
 	//            ↙ cюди вводимо назву файлу з сontainer
 	res.render(' ', {
 		layout: 'shop',
+
 		navigation: {
 			links: [
 				{
@@ -2571,7 +2572,7 @@ router.get('/shoporder', function (req, res) {
 			},
 		},
 		action_block: [
-			{ text: 'Швидке замовлення', isPrimary: true },
+			{ text: 'Швидке замовлення', isSuccess: true },
 			{ text: 'Видалити', isDanger: true },
 			{ text: 'Детальніше', isInfo: true },
 		],
