@@ -1,0 +1,311 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main>
+    {{#with navigation}}
+    <div class="col-12">
+        <ul class="nav justify-content">
+            {{#each links}}
+            <li class="nav-item mt-2">
+                <a href="{{href}}" {{#unless @last}} class="nav-link" {{else}} class="nav-link disabled" {{/unless}}>
+                    {{text}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    </div>
+    </div>
+    {{/with}}
+    {{#with purchase}}
+    <div class="row p-3 g-2">
+
+        <ol class="nav nav-tabs">
+            {{#each tabs}}
+            {{#if @first}}
+            <li class="nav-item active">
+
+                <a class="nav-link active" href="#">{{this}}</a>
+            </li>
+            {{else}}
+            <li class="nav-item active">
+                <a class="nav-link" href="#">{{this}}</a>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ol>
+
+    </div>
+
+    <div class="col-12 row p-3 g-2">
+
+        <div class="col-2 p-3">
+
+            {{#with actionBlock.input}}
+
+            <section class="col-12 p-3">
+                <input class="form-control" name="type" placeholder="{{placeholder}}">
+                <label class="fform-control"></label>
+            </section>
+
+            {{/with}}
+
+        </div>
+
+
+        <div class="col-10 p-3">
+
+            <ol class="nav nav-list mt-3">
+                {{#each actionBlock.buttons}}
+                {{#if isSuccess}}
+                <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-success">{{text}}</a></li>
+                {{/if}}
+                {{#if isOutline}}
+                <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-outline-success">{{text}}</a>
+                </li>
+                {{/if}}
+                {{#if isDanger}}
+                <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-outline-danger">{{text}}</a>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+
+    </div>
+
+    <hr>
+
+
+    {{#each itemList}}
+    <div class="row border-bottom p-3">
+
+        <div class="col-6 row p-3">
+
+            <div class="col-8 p-3">
+                <p class="fs-5">{{number}}</p>
+                <p class="fs-3">{{status}}</p>
+            </div>
+
+            <div class="col-4 p-3">
+                {{#with amount}}
+                <p class="fs-4 fw-medium">{{title}}</p>
+                <p>{{value}}</p>
+                {{/with}}
+            </div>
+        </div>
+
+        <div class="col-4 row p-3">
+
+            <div class="col-8 row p-3">
+                {{#each images}}
+                <div class="col-4 p-3">
+                    <img src="{{this}}">
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+
+        <div class="col-2 p-3">
+            {{#with button}}
+            <div class="row p-3">
+
+                {{#if isPrimary}}
+                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                {{else}}
+                <a class="btn btn-secondary" disabled>{{text}}</a>
+
+                {{/if}}
+
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    {{/each}}
+    {{/with}}
+
+
+    {{#with userInfo}}
+    <div class="col-12 row p-3 g-2">
+
+        <p class="fs-2 fw-medium ms-2">{{title}}</p>
+
+
+        <div class="col-12 row text-center border">
+            {{#with profileData}}
+
+            <p class="fs-3 fw-medium">{{title}}</p>
+            <div class="col-12 row text-center border p-3 g-2">
+
+                {{#with fullName}}
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with surname}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with name}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with middleName}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+
+                </div>
+                {{/with}}
+            </div>
+            {{/with}}
+
+            {{#with profileData.otherInfo}}
+
+            <div class="col-12 row text-center border p-3 g-2 ">
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with birthday}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with sex}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with language}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+            {{/with}}
+
+            {{#with userInfo.contacts}}
+            <div class="col-12 row border text-center p-3 g-2">
+                {{#each buttons}}
+                <div class="col-4 text-center p-3">
+
+
+                    {{#if isPrimary}}
+                    <a class="btn btn-primary px-4 mx-0" href="{{link}}">{{text}}</a>
+                    {{/if}}
+                    {{#if isSecondary}}
+                    <a class="btn btn-outline-secondary px-4 mx-0" href="{{link}}">{{text}}</a>
+                    {{/if}}
+                    {{#if isDanger}}
+                    <a class="btn btn-outline-danger px-3" href="{{link}}">{{text}}</a>
+                    {{/if}}
+                    {{#if noCondition}}
+                    <a class="btn btn-primary px-4 mx-0" href="{{link}}">{{text}}</a>
+                    {{/if}}
+
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+
+        </div>
+
+        {{#with userInfo.recipients}}
+        <div class="col-12 row border text-center p-3 g-2">
+            <p class="fs-4 fw-medium">{{title}}</p>
+
+            {{#each users}}
+            <div class="col-4 border text-center p-3 g-2">
+
+                <p class="fw-medium">{{name}}</p>
+                <p>{{phone}}</p>
+                {{#with button}}
+                <a class="btn btn-primary text-center" href="{{link}}">{{text}}</a>
+                {{/with}}
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+
+
+        {{#with userInfo.contacts}}
+        <div class="col-12 row border p-3 text-center g-2">
+
+            <p class="fs-4 fw-medium py-2">{{title}}</p>
+
+            {{#with contactData.phone}}
+            <div class="col-4 border text-center py-3 g-2">
+                <p>{{title}}</p>
+                <p class="fw-medium">{{value}}</p>
+                {{/with}}
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <button class="btn btn-primary" href="{{link}}">{{text}}</button>
+                {{/if}}
+                {{/each}}
+
+            </div>
+
+            {{#with contactData.additionalPhone}}
+            <div class="col-4 border text-center py-3 g-2">
+
+                <p>{{title}}</p>
+                <p class="fw-medium">{{value}}</p>
+                {{/with}}
+
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <button class="btn btn-outline-secondary" href="{{link}}">{{text}}</button>
+                {{/if}}
+                {{/each}}
+
+            </div>
+
+            {{#with contactData.email}}
+            <div class="col-4 border text-center  py-3 g-2">
+
+                <p>{{title}}</p>
+                <p class="fw-medium">{{value}}</p>
+                {{/with}}
+
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <button class="btn btn-outline-danger" href="{{link}}">{{text}}</button>
+                {{/if}}
+                {{/each}}
+
+            </div>
+        </div>
+        {{/with}}
+    </div>
+    <div class"my-5">
+        <footer>
+            <div class="row g-5">
+                {{#each footer}}
+                <div class="nav col-2">
+                    <div>
+                        {{#each this}}
+                        <div>
+                            <a class="nav nav-link{{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </footer>
+
+</main>
