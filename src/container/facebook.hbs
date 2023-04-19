@@ -1,0 +1,250 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+
+{{#each users}}
+<h1><span class="badge bg-secondary">Users:</span></h1>
+<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender:<i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age:<i>{{age}}</i></b></span>
+</big>
+<br>
+{{#if friends}}
+<br>
+
+<h4><span class="badge bg-secondary"><b>Friends :</b></span></h4>
+
+{{#each friends}}
+
+<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name<i>{{name}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender:<i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age:<i>{{age}}</i></b></span>
+</big>
+
+
+
+{{#if mutual_friends}}
+<br>
+
+<h5><span class="badge bg-secondary"><b>----Mutual_friends :</b></span></h5>
+
+{{#each mutual_friends}}
+----<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    ----<span class="badge rounded-pill text-bg-info"><b>Name:</b><i>{{name}}</i>
+    </span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender:<i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age:<i>{{age}}</i></b></span>
+</big>
+<br>
+
+{{#if mutual_friends}}
+
+
+<h5><span class="badge bg-secondary"><b>------Mutual_friends :</b></span></h5>
+
+
+{{#each mutual_friends}}
+------<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i> </b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender:<i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age:<i>{{age}}</i></b></span>
+</big>
+
+{{/each}}
+<br>
+
+{{#if groups}}
+<br>
+<h1>
+    <span class="badge text-bg-success">
+        <b>Groups:</b></span>
+</h1>
+<br>
+<b>groups 1:</b>
+<br>
+{{#each groups}}
+<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:</b><i>{{name}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Discription:<i>{{description}}</i></b></span>
+
+</big>
+<br>
+{{!-- не работает--}}
+<b>Groups members:</b>
+<br>
+{{#each members}}
+----<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i> </b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender:<i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age:<i>{{age}}</i></b></span>
+</big>
+<b>Id:</b> <i>{{id}}</i>
+<br>
+<b>Name:</b> <i>{{name}}</i>
+<br>
+<b>Description:</b> <i>{{description}}</i>
+<br>
+{{/each}}
+<br>
+{{/each}}
+
+<br>
+<br>
+{{/if}}
+
+
+{{/if}}
+
+
+{{/each}}
+
+
+{{/if}}
+
+{{!-- --}}
+
+<br>
+{{#if groups}}
+<br>
+<h4>
+    <span class="badge text-bg-success">
+        <b>Groups:</b></span>
+
+</h4>
+<br>
+{{#each groups}}
+<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i> </b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Discription: <i>{{description}}</i></b></span>
+
+</big>
+<br>
+
+<b>Groups members:</b>
+<br>
+{{#each members}}
+
+----<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender: <i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age: <i>{{age}}</i></b></span>
+</big>
+<br>
+
+
+{{/each}}
+<br>
+{{/each}}
+
+<br>
+<br>
+{{/if}}
+
+
+
+
+{{!-- --}}
+
+
+
+
+<br>
+{{/each}}
+
+
+{{/if}}
+<br>
+
+
+
+<br>
+{{#if groups}}
+<br>
+<h1>
+    <span class="badge text-bg-success">
+        <b>Groups:</b></span>
+</h1>
+{{#each groups}}
+<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Discription:<i>{{description}}</i></b></span>
+
+</big>
+<br>
+
+<b>Groups members:</b>
+<br>
+{{#each members}}
+----<span class="badge rounded-pill text-bg-warning">
+    <b>Id:</b> <i>{{id}}</i></span>
+<br>
+<big>
+    <span class="badge rounded-pill text-bg-info"><b>Name:<i>{{name}}</i> </b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Gender:<i>{{gender}}</i></b></span>
+    <span class="badge rounded-pill text-bg-info"><b>Age:<i>{{age}}</i></b></span>
+</big>
+<br>
+{{/each}}
+<br>
+{{/each}}
+
+<br>
+<br>
+{{/if}}
+<hr>
+{{/each}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML--}}
