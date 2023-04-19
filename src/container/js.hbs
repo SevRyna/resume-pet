@@ -95,8 +95,8 @@
         <br />
         <hr />
         <div>
-            <button type="button" class="btn btn-link">Cпшommunity</button>
-            {{#with community}}
+            <button type="button" class="btn btn-link">Community</button>
+            {{#each community}}
             <section>
                 <community>
                     <b>Name:</b> <i>{{name}}</i>
@@ -104,7 +104,7 @@
                     <b>Type:</b> <i>{{type}}</i>
                 </community>
             </section>
-            {{/with}}
+            {{/each}}
 
 
 
