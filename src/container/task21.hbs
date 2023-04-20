@@ -3,93 +3,107 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div class="card">
-    <div class"card-body">
-        <h1>JavaScript</h1>
-        <p>JavaScript is a popular high-level, dynamic, and interpreted programming language.</p>
-        <button type="button" class="btn btn-primary">Open page</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-primary">Add to cart</button>
+<main>
+
+    <hr>
+    {{#with heading.main}}
+    <div class="card">
+        <div class="card-body">
+            <h1 text>{{title}}</h1>
+            <p text>{{text}}</p>
+            <div>
+                <button type="button" class="btn btn-primary btn-sm">{{button_text.solid}}</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-outline-primary btn-sm">{{button_text.outline}}</button>
+            </div>
+        </div>
     </div>
-</div>
+    {{/with}}
 
-<br>
-<br>
+    <br>
+    <hr>
 
-<div class="card">
-    <div class"card-body">
-        <h2>Stack Overflow</h2>
-        <p>First-class functions.</p>
-        <button type="button" class="btn btn-secondary">Open page</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-secondary">Add to card</button>
-    </div>
-</div>
 
-<br>
-<br>
-
-<div class="card">
-    <div class"card-body">
-        <h3>JavaScript Weekly</h3>
-        <p>Prototype-based inheritance newsletter.</p>
-        <button type="button" class="btn btn-success">Open page</button>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-success">Add to card</button>
-    </div>
-</div>
-
-<br>
-<br>
-<div class="card">
-    <div class"card-body">
-        <div class="display-1">HTML</div>
-        <br>
-        <p>Outdated HTML tags</p>
-        <br>
-        <p>Tags that have been identified as deprecated and not recommended for use in HTML version 5.</p>
-        <br>
-        <button type="button" class="btn btn-outline-warning">Open</button>
-        <br>
-        <hr>
-        <br>
-        <div class="card">
-            <div class"card-body">
-                <div class="display-6">Sections</div>
-                <br>
-                <button type="button" class="btn btn-info">Learn more</button>
-                <br>
-                <br>
-                <div class="card">
-                    <div class"card-body">
-                        <h3>About modules</h3>
-                        <br>
-                        <p>Modules with import/export statements</p>
-                        <br>
-                        <a href="https://www.google.com/" class="nav link">{{text}}</a>
-                        <button type="button" class="btn btn-link">Open link page</button>
-                    </div>
-                </div>
-                <br>
-                <hr>
-                <br>
+    {{#with heading.second}}
+    <hr>
+    <div class="card">
+        <div class="card-body">
+            <h2 class="text">{{title}}</h1>
+                <p class="text">{{text}}</p>
                 <div>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/" class="nav link">{{text}}</a>
-                            <button type="button" class="btn btn-link">Github</button>
-                        </li>
-                        <li>
-                            <a href="https://getbootstrap.com/" class="nav link">{{text}}</a>
-                            <button type="button" class="btn btn-link">Bootstrap</button>
-                        </li>
-                    </ul>
+                    <button type="button" class="btn btn-secondary btn-sm">{{button_text.solid}}</button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-outline-secondary btn-sm">{{button_text.outline}}</button>
                 </div>
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    {{#with heading.subblock}}
+    <hr>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text">{{title}}</h1>
+                <p class="text">{{text}}</p>
+                <div>
+                    <button type="button" class="btn btn-dark btn-sm">{{button_text.solid}}</button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-outline-dark btn-sm">{{button_text.outline}}</button>
+                </div>
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    {{#with nested_display}}
+    <hr>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text">{{title}}</h1>
+            <div class="card">
+                <div class="card-body">
+                    {{#with children_display}}
+                    <h4 class="text">{{title}}</h4>
+                    <p class="text">{{text}}</p>
+                    <button type="button" class="btn btn-outline-warning btn-sm">{{button.text}}</button>
+                    {{/with}}
+                </div>
+            </div>
+            <h6 class=" text">{{header_text}}</h6>
+            <button type="button" class="btn btn-info text-light">{{button.text}}</button>
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    {{#with paragraph}}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="text">{{title}}</h5>
+            <p class="text">{{text}}</p>
+            <a href="{{button.url}}">{{button.text}}</a>
+            <br>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    {{#each list_name}}
+                    <li><a href="{{url}}">{{text}}</a></li>
+                    <br>
+                    {{/each}}
+                </div>
+            </div>
 
-                {{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш
-                layout/default.hbs
-                має
-                вже структуру HTML--}}
+        </div>
+    </div>
+    {{/with}}
+
+</main>
+
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш
+layout/default.hbs
+має
+вже структуру HTML--}}

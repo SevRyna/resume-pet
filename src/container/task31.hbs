@@ -51,7 +51,9 @@
 
         <div class="col-5 g-4">
             <div class="card">
+
                 <img src="https://picsum.photos/400/200" class="card-img-top" alt="New York" />
+
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
@@ -184,65 +186,50 @@
     {{/with}}
     <br>
     <hr>
-    <h5>Partners</h5>
 
+    <div>
+        <section>
+            {{#with footer}}
+            <div>
+                <h5>{{title}}</h5>
+            </div>
+            <div class="row col-12">
+                <table>
+                    <th>
+                        {{#each navigation}}
+                        <ul class="list-group-flush col-4">
+                            <a class="list-group-item text-primary" href="{{this.href}}">{{text}}</a>
+                        </ul>
+                        {{/each}}
+                    </th>
+                    <th>
+                        {{#each socialMedia}}
+                        <ul class="list-group-flush col-4">
+                            <li class="list-group-item">
+                                <a href="{{this.link}}" class="btn btn-outline-dark">{{name}}</a>
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </th>
+                    <th>
+                        {{#each partners}}
+                        <ul class="list-group-flush col-4">
+                            <li class="list-group-item">
+                                <a href="{{this.link}}" class="btn btn-outline-info">{{name}}</a>
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </th>
 
+                </table>
+            </div>
+            {{/with}}
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <br>
+    </div>
 </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш
-layout/default.hbs
-має
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs має
 вже структуру HTML--}}
