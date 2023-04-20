@@ -1,0 +1,214 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main>
+    {{#with navigation}}
+    <div class="col-12">
+        <ul class="nav justify-content">
+            {{#each links}}
+            <li class="nav-item mt-2">
+                <a href="{{href}}" {{#unless @last}} class="nav-link" {{else}} class="nav-link disabled" {{/unless}}>
+                    {{text}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    {{/with}}
+
+
+    {{#with formBlock}}
+    <div class="row">
+        <div class="col-md-8">
+            <h1> {{header}} </h1>
+            {{rating.title}}: {{rating.value}}
+            {{#with actionBlock}}
+            <ul class="nav nav-tabs">
+                {{#each tabs}}
+                <li class="nav-item">
+                    <a class="nav-link 
+                        {{#if isActive}}
+                            active  
+                        {{/if}}" {{#if isActive}} aria-current="page" {{/if}} href="#">{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+            <hr>
+            <div class="card">
+                {{#with report}}
+                {{title}}
+                <br>
+                {{#with button}}
+                <a class="btn btn-secondary col-4" href="{{link}}" role="button">{{text}}</a>
+                {{/with}}
+                {{/with}}
+                <br>
+                <hr>
+                {{/with}}
+            </div>
+
+            {{#with feedbackBlock}}
+            <h2>{{title}}</h2>
+            <br>
+            {{#each buttons}}
+            {{#if isWarning}}
+            <a class="btn btn-warning" href="{{link}}" role="button">{{text}}</a>
+            {{/if}}
+            {{#if isSuccess}}
+            <a class="btn btn-success" href="{{link}}" role="button">{{text}}</a>
+            {{/if}}
+            {{#if isDanger}}
+            <a class="btn btn-danger" href="{{link}}" role="button">{{text}}</a>
+            {{/if}}
+            {{/each}}
+            {{/with}}
+
+
+        </div>
+
+        <div class="col-md-4">
+            {{#with goodsInfo}}
+
+            <img src='{{photo}}'></img>
+            <br>
+            {{name}}
+            <br>
+            {{price}}
+            <br>
+            {{#if inMarket}}
+            Є в наявності
+            {{else}}
+            Немає в наявності
+            {{/if}}
+            <br>
+
+            {{#each buttons}}
+            {{#if isPrimary}}
+            <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+
+            {{/if}}
+            {{#if isSecondary}}
+            <a class="btn btn-secondary" href="{{link}}" role="button">{{text}}</a>
+
+            {{/if}}
+            <br><br>
+            {{/each}}
+
+            {{#with seller}}
+            {{title}}: {{value}}
+            {{/with}}
+
+            {{/with}}
+        </div>
+    </div>
+
+    {{/with}}
+
+    <hr>
+
+    <div class="row">
+        {{#each reviewList}}
+        <div class="card">
+            <div class="col-md-12">
+                {{#with title}}
+                <h5><b>{{userName}}</b></h5>
+                {{caption}}
+                <br>
+                {{date}}
+                {{/with}}
+                <hr>
+
+                {{#with reviewBody}}
+
+                {{#with seller}}
+                {{title}}: {{value}}
+                {{/with}}
+                <br><br>
+                {{#with rating}}
+                {{title}}:{{value}}
+                {{/with}}
+                <br><br>
+                {{#with text.[0]}}
+                {{this}}
+                {{/with}}
+                <br><br>
+                {{#with advantages}}
+                <b>{{title}}:</b>
+                <br>
+                {{text}}
+                {{/with}}
+                <br><br>
+                {{#with disadvantages}}
+                <b>{{title}}:</b>
+                <br>
+                {{text}}
+                {{/with}}
+                <br><br>
+                {{#each images}}
+                <img src="{{this}}"></img>
+                {{/each}}
+            </div>
+        </div>
+        <hr>
+
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-11">
+            <div class="card">
+                {{#each coments}}
+                <h5><b>{{userName}}</b></h5>
+                <br>
+                {{date}}
+                <br>
+                {{text}}
+                <hr>
+                {{/each}}
+            </div>
+        </div>
+
+        {{/with}}
+        <hr>
+        {{/each}}
+
+
+        {{#with service}}
+        <div class="text-center bg-success">
+            <h2>{{title}}</h2>
+            <p>
+                {{description}}
+            </p>
+
+            {{#with buttons.[0]}}
+            <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+            {{/with}}
+        </div>
+        {{/with}}
+        <br><br><br><br>
+
+        <div class"my-5">
+            <footer>
+                <div class="row g-5">
+                    {{#each footer}}
+                    <div class="nav col-2">
+                        <div>
+                            {{#each this}}
+                            <div>
+                                <a class="nav nav-link{{#if @last}} disabled {{/if}}"
+                                    href="{{this.link}}">{{this.text}}</a>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </footer>
+
+
+            <hr>
+
+
+
+
+</main>

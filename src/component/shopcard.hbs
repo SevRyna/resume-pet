@@ -1,0 +1,21 @@
+<div class="col-7 ">
+
+    {{#with productData}}
+    <div class="card">
+
+        <img src="{{img}}" class="card-img-top" />
+
+        <div class="card-body">
+            {{#with info}}
+            <h5 class="card-title">Назва: {{title}}</h5>
+            <p class="card-text">Опис: {{about}}</p>
+            <p class="card-text">Ціна: {{price}}</p>
+            <p class="bg text text-bg-warning badge rounded-pill">HOT</p>
+            <p class="bg text text-bg-info badge rounded-pill">NEW</p>
+            <p class="bg text text-bg-primary badge rounded-pill">BONUS</p>
+            {{/with}}
+        </div>
+
+    </div>
+    {{/with}}
+</div>
