@@ -1,0 +1,59 @@
+<div class="col-8">
+    <div class="row">
+        {{#each goodsList}}
+        <div class=" col-6">
+            <img src='{{img}}' class="img-responsive" alt="goods">
+
+            {{#if isHot}}
+            <span class="bg text text-bg-warning badge rounded-pill">HOT!</span>
+            {{/if}}
+
+            {{#if isNew}}
+            <span class="bg text text-bg-info badge rounded-pill">Нове</span>
+            {{/if}}
+            <br>
+
+            {{#if isFast}}
+            <span class="bg text text-bg-success badge rounded-pill">Швидка доставка</span>
+            {{/if}}
+            <br>
+            {{#if isFree}}
+            <span class="bg text text-bg-secondary badge rounded-pill">Швидка доставка</span>
+            {{/if}}
+            <br>
+            {{name}}
+            <br>
+
+            {{#with review}}
+            {{amount}}{{text}}
+            {{/with}}
+
+            <br>
+            {{price}}
+            <br>
+            {{delivery}}
+
+            <br>
+            {{#each buttons}}
+            {{#if isPrimary}}
+            <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+            <br><br>
+            {{/if}}
+            {{#if isSecondary}}
+            <a class="btn btn-secondary" href="{{link}}" role="button">{{text}}</a>
+            <br>
+            {{/if}}
+            {{/each}}
+
+            <br>
+            <ul>
+                {{#each characteristics}}
+                <li>
+                    {{title}}: {{value}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </div>
+</div>
