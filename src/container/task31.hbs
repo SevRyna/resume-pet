@@ -2,6 +2,7 @@
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
+
 <main>
     {{#with navigator.links.[0]}}
     <div class="Home">
@@ -50,7 +51,9 @@
 
         <div class="col-5 g-4">
             <div class="card">
-                <img src="https://picsum.photos/400/200" class="card-img-top" title="New York" />
+
+                <img src="https://picsum.photos/400/200" class="card-img-top" alt="New York" />
+
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{description}}</p>
@@ -183,6 +186,7 @@
     {{/with}}
     <br>
     <hr>
+
     <div>
         <section>
             {{#with footer}}
@@ -225,12 +229,6 @@
         <br>
     </div>
 </main>
-
-
-
-
-
-
 
 
 {{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs має
