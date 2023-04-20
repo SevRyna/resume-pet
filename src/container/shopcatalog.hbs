@@ -121,24 +121,25 @@
         <div class="col-8">
             <div class="row">
                 {{#each goodsList}}
-                <div class=" col-6">
+
+                <div class="card col-6">
                     <img src='{{img}}' class="img-responsive" alt="goods">
-
+                    <br><br>
                     {{#if isHot}}
-                    <span class="bg text text-bg-warning badge rounded-pill">HOT!</span>
+                    <span class="badge text-bg-warning">HOT!</span>
                     {{/if}}
-
+                    <br>
                     {{#if isNew}}
-                    <span class="bg text text-bg-info badge rounded-pill">Нове</span>
+                    <span class="text-bg-info badge rounded-pill">Нове</span>
                     {{/if}}
                     <br>
 
                     {{#if isFast}}
-                    <span class="bg text text-bg-success badge rounded-pill">Швидка доставка</span>
+                    <span class="text-bg-success badge rounded-pill">Швидка доставка</span>
                     {{/if}}
                     <br>
                     {{#if isFree}}
-                    <span class="bg text text-bg-secondary badge rounded-pill">Швидка доставка</span>
+                    <span class="text-bg-secondary badge rounded-pill">Швидка доставка</span>
                     {{/if}}
                     <br>
                     {{name}}
