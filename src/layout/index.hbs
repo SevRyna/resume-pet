@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<header>
+		<div class="mb-2">
+			<h1>{{name.firstname}}{{name.lastname}}</h1>
+			<h1>Iryna Konopelko</h1>
+		</div>
+		<div>
+			<h3>{{text}}</h3>
+			<h3>Resume project</h3>
+		</div>
+	</header>
+
+	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
+	{{{body}}}
+</body>
