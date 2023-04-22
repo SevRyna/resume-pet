@@ -1,0 +1,36 @@
+{{!-- Це файл з кодом, який виводиться якщо в нас є помилка --}}
+<div>
+	<ul>
+		{{#each list}}
+		<li>
+			{{#if @first }}first{{/if}}
+
+			<span>{{name}}</span>
+
+
+			<button>{{#if @last}}disabled{{/if}}>{{name}}</button>
+			<button>{{#if @last}}disabled{{/if}}>{{name}}-{{@index}}</button>
+			</span>
+		</li>
+		<br>
+		{{/each}}
+		{{#each user}}
+		<li>
+			{{this}}
+			{{!или--}}
+			{{#if value}}{{value}}{{/if}}
+			{{#if text}}{{text}}{{/if}}
+
+			{{#if value}}
+			{{value}}
+			{{else}}
+			{{text}}
+			{{/if}}
+
+
+			{{@key}}:{{#if value}}{{value}}{{else}}{{text}}{{/if}}.
+
+		</li>
+		{{/each}}
+	</ul>
+</div>

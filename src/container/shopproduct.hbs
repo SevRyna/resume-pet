@@ -1,0 +1,213 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main>
+    {{#with navigation}}
+    <div class="card mb-5">
+        <div class="row">
+            <div class="col-4">
+                <div class="display-6 ms-2 mb-2">
+                    {{Logo}}
+                </div>
+            </div>
+
+            <div class="col-8">
+                <ul class="nav justify-content -end">
+                    {{#each links}}
+                    <li class="nav-item mt-2">
+                        <a href="{{href}}" {{#unless @last}} class="nav-link" {{else}} class="nav-link disabled"
+                            {{/unless}}>
+                            {{text}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+
+
+
+    <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url}}
+                <li class="breadcrumb-item">
+                    <a href="{{url}}">{{name}}</a>
+                </li>
+                {{else}}
+                <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row ">
+
+
+        <div class="col-7 ">
+
+            {{#with productData}}
+            <div class="card">
+
+                <img src="{{img}}" class="card-img-top" />
+
+                <div class="card-body">
+                    {{#with info}}
+                    <h5 class="card-title">Назва: {{title}}</h5>
+                    <p class="card-text">Опис: {{about}}</p>
+                    <p class="card-text">Ціна: {{price}}</p>
+                    <p class="bg text text-bg-warning badge rounded-pill">HOT</p>
+                    <p class="bg text text-bg-info badge rounded-pill">NEW</p>
+                    <p class="bg text text-bg-primary badge rounded-pill">BONUS</p>
+                    {{/with}}
+                </div>
+
+            </div>
+            {{/with}}
+        </div>
+        <div class="col-5 ">
+            <div class="row ">
+                <div class="card border-white">
+                    <table class="table">
+                        {{#with productData.item}}
+                        <thead>
+                            <tr>
+                                {{#each head}}
+                                <th>
+                                    {{this}}
+                                </th>
+                                {{/each}}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each body}}
+                            <tr>
+                                {{#each this}}
+                                <td>
+                                    {{this}}
+                                </td>
+                                {{/each}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                        {{/with}}
+                    </table>
+                </div>
+            </div>
+
+            <div class="row ">
+                {{#with productData.param }}
+
+                <div class="list-group">
+                    <div class="card-header">{{title}}</div>
+                    {{#each list}}
+                    <div class="list-group-item">{{this}}</div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+
+            <div class="row">
+                {{#with productData.alert}}
+                {{#if isError}}<span class="alert fw-bold alert-danger">{{text}}</span>{{/if}}
+                {{/with}}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-12">
+            <div class="card">
+                <ol class="nav nav-item">
+                    <li class="nav-link col-3"> <input class="btn btn-warning" type="Buy" value="Buy"> </li>
+                    <li class="nav-link col-3"> <input class="btn btn-outline-danger" type="Add to card"
+                            value="Add to card">
+                    </li>
+                    <li class="nav-link col-3"> <input class="btn btn-success" type="like" value="Like"> </li>
+                    <li class="nav-link col-3"> <input class="btn btn-outline-info" type="Share" value="Share">
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+    <div class="card">
+        {{#with goodsOtherBlock}}
+        <h2>{{title}}</h2>
+        <div class="row g-6">
+            {{#each cards}}
+            <div class="col-4 g-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://picsum.photos/400/200" class="card-img-top" alt="iPhone 13" />
+                        <h5>
+                            <span class="text-bg-secondary ">{{title}}</span>
+                            <span class="bg text text-bg-info badge rounded-pill">{{idNew}}</span>
+                            <span class="bg text text-bg-warning badge rounded-pill">{{isHot}}</span>
+                        </h5>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+    <hr>
+    {{#with service}}
+    <div class="card">
+        <div class="card-body text-bg-success">
+            <div class="col-12">
+                <h2 class="text-center">{{title}}</h2>
+                <p class="text-center">{{description}}</p>
+                {{#each buttons}}
+                <div class="d-grid gap-2 col-3 mx-auto"></div>
+                <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </div>
+    {{/with}}
+    <br>
+
+    <hr>
+
+    <footer>
+        <div class="row g-5">
+            {{#each footer}}
+            <div class="nav col-2">
+                <div>
+                    {{#each this}}
+                    <div>
+                        <a class="nav nav-link{{#if @last}} disabled 
+                        {{/if}}" href="{{this.link}}">{{this.text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </footer>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs Адже наш layout/default.hbs
+має
+вже структуру HTML--}}

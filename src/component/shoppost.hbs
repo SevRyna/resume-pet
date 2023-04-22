@@ -1,0 +1,21 @@
+{{#with newsOtherBlock}}
+<h2>{{title}}</h2>
+<div class="row g-3">
+    {{#each cards}}
+    <div class="col-3 g-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="https://picsum.photos/400/200" class="card-img-top" alt="" />
+                <h5>
+                    <span class="text-bg-secondary ">{{title}}</span>
+                    <span class="bg text text-bg-info badge rounded-pill">{{idNew}}</span>
+                    <span class="bg text text-bg-warning badge rounded-pill">{{isTop}}</span>
+                </h5>
+                <p class="card-text">{{description}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/with}}
+</div>
