@@ -2,9 +2,32 @@
 Це код container файлу для index сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 --}}
+<main>
+
+    <div class="row">
+        <div class="col-4">
+            <h1>{{name.firstname}} {{name.lastname}}</h1>
+        </div>
+        <div class="col-8">
+            <ul class="nav justify-content-end">
+                <li class="nav-item mt-2">
+                    <h2>{{text}}</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
-<div>Hello world</div>
+
+
+
+
+
+
+
+</main>
+
+
 
 {{!--
 Цей код містить лише те, що буде виводитись в
