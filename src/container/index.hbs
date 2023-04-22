@@ -6,40 +6,38 @@
 <div class="card mb-5">
     <div class="row">
         <div class="col-4">
-            <h1>{{name.firstname}}</h1>
-            <h1>{{name.lastname}}</h1>
+            <p>{{name.firstname}}</p>
+            <p>{{name.lastname}}</p>
         </div>
+        <div class="col-8">
+            <ul class="nav justify-content-end">
 
-        <div class="col-8 nav justify-content-end">
-            <h3 class="nav-item mt-2">{{text}}</h3>
-        </div>
-    </div>
-</div>
-<br>
-<h5>Cписок сторінок</h5>
-<p>Тут вам потрібно написати інформацію про ваш проєкт.
-    Поки що можна написати будь-який текст</p>
+                <li class="nav-item mt-2">
+                    <a href="{{href}}"></a>
+                    {{text}}
 
+                </li>
 
-<button type="button" class="btn btn-primary">
-    <a href="shoporder">Shoporder</a>
-</button>
-<br><br>
-<button type="button" class="btn btn-primary">
-    <a href="bio">Bio</a>
-</button>
-<br><br>
+            </ul>
+
+            <br>
+            <h5>Cписок сторінок</h5>
+            <p>Тут вам потрібно написати інформацію про ваш проєкт.
+                Поки що можна написати будь-який текст</p>
 
 
-
-
-
-
-
-
-
-
-
+            <button type="button" class="btn btn-primary">
+                <a href="shoporder">Shoporder</a>
+            </button>
+            <br><br>
+            <button type="button" class="btn btn-primary">
+                <a href="bio">Bio</a>
+            </button>
+            <br><br>
+            <button type="button" class="btn btn-primary">
+                <a href="car">Car</a>
+            </button>
+            <br><br>
 
 
 
@@ -50,9 +48,19 @@
 
 
 
-{{!--
-Цей код містить лише те, що буде виводитись в
 
-<body>
-    Адже наш layout/default.hbs має вже структуру HTML
-    --}}
+
+
+
+
+
+
+
+
+
+            {{!--
+            Цей код містить лише те, що буде виводитись в
+
+            <body>
+                Адже наш layout/default.hbs має вже структуру HTML
+                --}}
